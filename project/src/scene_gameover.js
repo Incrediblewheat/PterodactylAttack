@@ -1,8 +1,6 @@
-
 Ptero.scene_gameover = (function(){
 
 	var buttonList;
-
 	var isNewHigh;
 
 	function cleanup() {
@@ -11,14 +9,47 @@ Ptero.scene_gameover = (function(){
 
 	var isExiting;
 	function init() {
-		Ptero.audio.play('score');
+		Ptero.audio.play('Ptero_Lose_Music');
 		Ptero.audio.play('drop_menu');
 		Ptero.overlord.stopScript();
 		isExiting = false;
 
-		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
+		if (Ptero.player.lives == 0){
+			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
 
-		var btns = buttonList.namedButtons;
+			var btns = buttonList.namedButtons;
+		}
+		else{
+			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_continue"]);
+
+			var btns = buttonList.namedButtons;
+
+			btns["replay"].onclick = function() {
+			isExiting = true;
+			cleanup();
+			Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
+			Ptero.background.exit();
+			Ptero.background.playOutTrack();
+			Ptero.background.onExitDone = function() {
+				setTimeout(function(){
+					if (Ptero.overlord.waveNum = 2){
+						Ptero.setScene(Ptero.scene_play);
+						Ptero.scene_play.fadeToNextStage();
+
+					}
+					else if (Ptero.overlord.waveNum = 3){
+						Ptero.setScene(Ptero.scene_play);
+						Ptero.scene_play.fadeToNextStage();
+						Ptero.scene_play.fadeToNextStage();
+					}
+					else{
+						Ptero.setScene(Ptero.scene_play);
+					}
+				}, 1000);
+			};
+		};
+		}
+		
 
 		btns["score"].text    = Ptero.score.getTotal().toString();
 		btns["waves"].text    = Ptero.score.getWaves().toString();
@@ -27,34 +58,26 @@ Ptero.scene_gameover = (function(){
 		btns["bounties"].text = Ptero.score.getBounties().toString();
 		btns["accuracy"].text = Math.floor(Ptero.score.getAccuracy()*100).toString();
 
-		btns["replay"].onclick = function() {
-			isExiting = true;
-			cleanup();
-			Ptero.audio.fadeOut('score',1.0);
-			Ptero.background.exit();
-			Ptero.background.playOutTrack();
-			Ptero.background.onExitDone = function() {
-				setTimeout(function(){
-					Ptero.setScene(Ptero.scene_play);
-				}, 1000);
-			};
-		};
 
 		btns["quit"].onclick = function() {
 			Ptero.setScene(Ptero.scene_menu);
-			Ptero.audio.stop('score');
+			Ptero.audio.stop('Ptero_Lose_Music');
 			Ptero.audio.play('theme');
 		};
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game
 		setTimeout(function() {
-			btns["replay"].enable();
+			if (Ptero.player.lives == 0){
+			}
+			else{
+				btns["replay"].enable();
+			}	
 			btns["quit"].enable();
 		}, 1000);
 
 		isNewHigh = Ptero.score.commitStats();
 		if (!isNewHigh.score) {
-			btns["highScore"].text = "game over";
+			btns["highScore"].text = "continue?";
 		}
 	}
 
