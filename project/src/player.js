@@ -60,6 +60,6 @@ Ptero.Player.prototype = {
 	},
 	die: function() {
 		this.lives -= 1;
-		console.log(this.lives);
+		console.log("Lives Remaining: " + this.lives);
 	},
 };
