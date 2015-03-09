@@ -27,24 +27,16 @@ Ptero.scene_gameover = (function(){
 			btns["replay"].onclick = function() {
 			isExiting = true;
 			cleanup();
+			
 			Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
 			Ptero.background.exit();
 			Ptero.background.playOutTrack();
 			Ptero.background.onExitDone = function() {
 				setTimeout(function(){
-					if (Ptero.overlord.waveNum == 2){
-						Ptero.setScene(Ptero.scene_play);
-						Ptero.scene_play.fadeToNextStage();
-
-					}
-					else if (Ptero.overlord.waveNum == 3){
-						Ptero.setScene(Ptero.scene_play);
-						Ptero.scene_play.fadeToNextStage();
-						Ptero.scene_play.fadeToNextStage();
-					}
-					else{
-						Ptero.setScene(Ptero.scene_play);
-					}
+					currwave = Ptero.overlord.waveNum;
+					Ptero.setScene(Ptero.scene_play);
+					Ptero.scene_play.switchBackground(currwave);
+					Ptero.overlord.createWaveScript(currwave);
 				}, 1000);
 			};
 		};

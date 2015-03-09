@@ -1,3 +1,4 @@
+
 Ptero.Player = function() {
 	this.maxHealth = 8;
 	this.initHealth = 1;
