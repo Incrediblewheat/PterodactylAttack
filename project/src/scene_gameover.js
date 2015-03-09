@@ -32,12 +32,12 @@ Ptero.scene_gameover = (function(){
 			Ptero.background.playOutTrack();
 			Ptero.background.onExitDone = function() {
 				setTimeout(function(){
-					if (Ptero.overlord.waveNum = 2){
+					if (Ptero.overlord.waveNum == 2){
 						Ptero.setScene(Ptero.scene_play);
 						Ptero.scene_play.fadeToNextStage();
 
 					}
-					else if (Ptero.overlord.waveNum = 3){
+					else if (Ptero.overlord.waveNum == 3){
 						Ptero.setScene(Ptero.scene_play);
 						Ptero.scene_play.fadeToNextStage();
 						Ptero.scene_play.fadeToNextStage();

@@ -1,3 +1,4 @@
+
 Ptero.ButtonList = function(dict) {
 	// this is the ordered list of all the buttons
 	this.buttons = [];

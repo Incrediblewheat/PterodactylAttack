@@ -106,6 +106,7 @@ Ptero.scene_menu = (function(){
 	}
 
 	function init() {
+		Ptero.player = new Ptero.Player();
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
 
@@ -116,7 +117,7 @@ Ptero.scene_menu = (function(){
 			Ptero.scene_controlcenter.animateIn();
 			switchScene(Ptero.scene_controlcenter);
 		};
-		warnBtn.enable();
+		warnBtn.disable();
 
 		fadeOutTime = null;
 
@@ -210,9 +211,9 @@ Ptero.scene_menu = (function(){
 		for (i=0; i<len; i++) {
 			e = enemies[i];
 			if (e.path.time >= e.path.totalTime) {
-				if (i == 0) {
+				/*if (i == 0) {
 					warnBtn.draw(ctx);
-				}
+				}*/
 				pos = e.getPosition();
 				pos = frustum.projectToNear(pos);
 				pos.y += offset[i];
