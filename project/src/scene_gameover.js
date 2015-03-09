@@ -16,41 +16,27 @@ Ptero.scene_gameover = (function(){
 
 		if (Ptero.player.lives == 0){
 			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
-
 			var btns = buttonList.namedButtons;
 		}
 		else{
 			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_continue"]);
-
 			var btns = buttonList.namedButtons;
 
 			btns["replay"].onclick = function() {
 			isExiting = true;
 			cleanup();
 			Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
-			Ptero.background.exit();
-			Ptero.background.playOutTrack();
-			Ptero.background.onExitDone = function() {
-				setTimeout(function(){
-					if (Ptero.overlord.waveNum == 2){
-						Ptero.setScene(Ptero.scene_play);
-						Ptero.scene_play.fadeToNextStage();
-
-					}
-					else if (Ptero.overlord.waveNum == 3){
-						Ptero.setScene(Ptero.scene_play);
-						Ptero.scene_play.fadeToNextStage();
-						Ptero.scene_play.fadeToNextStage();
-					}
-					else{
-						Ptero.setScene(Ptero.scene_play);
-					}
-				}, 1000);
-			};
+			setTimeout(function(){
+				currWave = Ptero.overlord.waveNum;
+				currStage = Ptero.background.name;
+				Ptero.setScene(Ptero.scene_play);
+				Ptero.scene_play.switchBackground(currStage);
+				Ptero.overlord.createWaveScript(currWave);
+				console.log("Level Name: "+ Ptero.background.name);
+			}, 0);
 		};
 		}
 		
-
 		btns["score"].text    = Ptero.score.getTotal().toString();
 		btns["waves"].text    = Ptero.score.getWaves().toString();
 		btns["kills"].text    = Ptero.score.getKills().toString();
