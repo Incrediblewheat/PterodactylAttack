@@ -15,6 +15,7 @@ Ptero.scene_gameover = (function(){
 		isExiting = false;
 
 		if (Ptero.player.lives == 0){
+
 			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
 			var btns = buttonList.namedButtons;
 		}
@@ -25,20 +26,7 @@ Ptero.scene_gameover = (function(){
 			btns["replay"].onclick = function() {
 			isExiting = true;
 			cleanup();
-			
 			Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
-<<<<<<< HEAD
-			Ptero.background.exit();
-			Ptero.background.playOutTrack();
-			Ptero.background.onExitDone = function() {
-				setTimeout(function(){
-					currwave = Ptero.overlord.waveNum;
-					Ptero.setScene(Ptero.scene_play);
-					Ptero.scene_play.switchBackground(currwave);
-					Ptero.overlord.createWaveScript(currwave);
-				}, 1000);
-			};
-=======
 			setTimeout(function(){
 				currWave = Ptero.overlord.waveNum;
 				currStage = Ptero.background.name;
@@ -47,7 +35,6 @@ Ptero.scene_gameover = (function(){
 				Ptero.overlord.createWaveScript(currWave);
 				console.log("Level Name: "+ Ptero.background.name);
 			}, 0);
->>>>>>> dc913adff904eddff48da57dbe323acee1274e2d
 		};
 		}
 		

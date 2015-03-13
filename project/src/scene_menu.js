@@ -107,6 +107,8 @@ Ptero.scene_menu = (function(){
 
 	function init() {
 		Ptero.player = new Ptero.Player();
+		// reset the score
+		Ptero.score.reset();
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
 

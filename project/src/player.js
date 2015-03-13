@@ -1,7 +1,7 @@
 
 Ptero.Player = function() {
 	this.maxHealth = 8;
-	this.initHealth = 1;
+	this.initHealth = 4;
 
 	this.lives = 3;
 	console.log("LIVES", this.lives);
@@ -28,6 +28,9 @@ Ptero.Player.prototype = {
 	},
 	earnHealth: function(hp) {
 		this.health = Math.min(this.maxHealth, this.health+hp);
+	},
+	earnLife: function(lives){
+		this.lives + 1;
 	},
 	applyDamage: function(dmg) {
 		if (this.isGod) {

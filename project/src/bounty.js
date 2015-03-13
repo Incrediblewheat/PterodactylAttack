@@ -158,6 +158,7 @@ Ptero.Bounty.prototype = {
 
 				// earn bounty reward
 				Ptero.player.earnHealth(1);
+				Ptero.player.earnLife(1);
 
 				// kill all pteros
 				var len = this.cagedEnemies.length;
