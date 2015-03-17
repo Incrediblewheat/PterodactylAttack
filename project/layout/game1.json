@@ -192,28 +192,6 @@
 			"textAlign": "center",
 			"text": "",
 			"imageName": "bounty"
-		},
-		{
-			"name": "lives_ph",
-			"x": 1,
-			"y": 0,
-			"centerX": 246.526720696535,
-			"centerY": -4.896000000000116,
-			"w": 201.25129212510706,
-			"h": 46.62267195095744,
-			"font": "whitefont",
-			"textAlign": "center",
-		},
-		{
-			"name": "lives",
-			"x": 0.9530081314285723,
-			"y": 0.03669039746031717,
-			"centerX": 56.82443702857063,
-			"centerY": 28.412218514285485,
-			"w": 56.82443702857063,
-			"h": 56.82443702857097,
-			"font": "buttonfont",
-			"textAlign": "center",
-		} 
+		}
 	]
 }

@@ -75,7 +75,6 @@ Ptero.score = (function(){
 		},
 		addBounties: function(delta) {
 			bounties += delta;
-			console.log("totBounty: " +bounties);
 		},
 		addFailedBounties: function(delta) {
 			failedBounties += delta;
