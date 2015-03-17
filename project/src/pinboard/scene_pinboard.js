@@ -885,6 +885,7 @@ Ptero.Pinboard.scene_pinboard = (function(){
 	/******************************************************************************/
 	// CAMERA TOUCH OPERATIONS
 
+	var isAltZoom;
 	var isZoomPanKey;
 	var zoomPanTouchHandler = (function(){
 		var dx,dy;
@@ -912,7 +913,7 @@ Ptero.Pinboard.scene_pinboard = (function(){
 				isZoomPan = false;
 			},
 			scroll: function(cx,cy,delta,deltaX,deltaY) {
-				if (isZoomPanKey) {
+				if (isAltZoom) {
 					// from: http://stackoverflow.com/questions/2916081/zoom-in-on-a-point-using-scale-and-translate
 					var scaleFactor = Math.pow(1 + Math.abs(deltaY)/4 , deltaY > 0 ? 1 : -1);
 
@@ -933,7 +934,7 @@ Ptero.Pinboard.scene_pinboard = (function(){
 	var isPreviewKey;
 	function enableKeys() {
 		window.addEventListener("keydown", function(e) {
-			if (e.keyCode == 18) { // alt
+			if (e.keyCode == 32) { // spacebar
 				isZoomPanKey = true;
 			}
 			else if (e.keyCode == 16) { // shift
@@ -949,9 +950,12 @@ Ptero.Pinboard.scene_pinboard = (function(){
 			else if (e.keyCode == 89) { // "Y"
 				isMoveYOnly = true;
 			}
+			else if (e.keyCode == 18) { // alt
+				isAltZoom = true;
+			}
 		});
 		window.addEventListener("keyup", function(e) {
-			if (e.keyCode == 18) {
+			if (e.keyCode == 32) {
 				isZoomPanKey = false;
 			}
 			else if (e.keyCode == 16) {
@@ -966,6 +970,9 @@ Ptero.Pinboard.scene_pinboard = (function(){
 			}
 			else if (e.keyCode == 89) { // "Y"
 				isMoveYOnly = false;
+			}
+			else if (e.keyCode == 18) {
+				isAltZoom = false;
 			}
 		});
 	}

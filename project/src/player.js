@@ -3,8 +3,12 @@ Ptero.Player = function() {
 	this.maxHealth = 8;
 	this.initHealth = 4;
 
+	this.maxLives = 5;
 	this.lives = 3;
 	console.log("LIVES", this.lives);
+
+	this.initBounty = 0;
+	this.maxBounty = 5;
 
 	this.reset();
 	this.setGod(false);
@@ -25,12 +29,25 @@ Ptero.Player.prototype = {
 	},
 	reset: function() {
 		this.health = this.initHealth;
+		this.bounty = this.initBounty;
 	},
 	earnHealth: function(hp) {
 		this.health = Math.min(this.maxHealth, this.health+hp);
 	},
-	earnLife: function(lives){
-		this.lives + 1;
+	earnLives: function(oneUp) {
+		this.lives = Math.min(this.lives+oneUp, this.maxLives);
+		this.bounty = this.initBounty;
+		console.log("1UP, Lives :" +this.lives);
+	},
+	//Upon earning bounties the player's bounty bar fills. When max bounties are caught
+	//the player gets an extra life and the bounty bar resets.
+	earnBounty: function(inc) {
+		this.bounty += inc;
+
+		if (this.bounty == this.maxBounty) {
+			Ptero.player.earnLives(1);
+		}
+	//	console.log("Bountybar: " +this.bounty, "/" +this.maxBounty);
 	},
 	applyDamage: function(dmg) {
 		if (this.isGod) {

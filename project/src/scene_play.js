@@ -100,6 +100,8 @@ Ptero.scene_play = (function() {
 		isPaused = false;
 		makeHud();
 
+		var currentBounty = 0;
+
 		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_game"]);
 		var btns = buttonList.namedButtons;
 
@@ -126,6 +128,9 @@ Ptero.scene_play = (function() {
 
 		pauseBtn = btns["pause"];
 		pauseBtn.onclick = pause;
+
+//		livesPhBtn = btns["lives_ph"];
+//		livesBtn = btns["lives"];
 
 		netLeftBtn = btns["netLeft"];
 		netRightBtn = btns["netRight"];
@@ -210,30 +215,33 @@ Ptero.scene_play = (function() {
 					}
 				}
 			}
-
-			var bounty = Ptero.bounty;
-			var nextbounty;
+			var currentBounty = 0;
+			var nextBounty;
 			var bountyTime = 0;
 			var bountyColor;
 			function updateBounty(dt) {
 				bountyTime += dt;
-				nextbounty = Ptero.player.bounty;
+				nextBounty = Ptero.player.bounty;
 				var bountySpeed = 2;
-				if (bounty += 1) {
-					bounty = Math.min(nextbounty, bounty + bountySpeed*dt);
+				if (currentBounty < nextBounty) {
+					currentBounty = Math.min(nextBounty, currentBounty + bountySpeed*dt);
 				}
-				bountyColor = "#DDD";
-				if (Math.floor(bountyTime*6) % 2 == 0) {
-					if (bounty < nextbounty) {
+				else {
+					currentBounty = Math.max(nextBounty, currentBounty - bountySpeed*dt);
+				}
+
+				bountyColor = "#9A2EFE";
+/*				if (Math.floor(bountyTime*6) % 2 == 0) {
+					if (currentBounty < nextBounty) {
 						bountyColor = "#0F0";
 					}
-					else if (bounty > nextbounty) {
+					else if (currentBounty > nextBounty) {
 						bountyColor = "#F00";
 					}
-					else if (bounty == 1) {
+					else if (currentBounty == 1) {
 						bountyColor = "#F00";
 					}
-				}
+				} */
 			}
 
 			function show(name, on) {
@@ -302,17 +310,17 @@ Ptero.scene_play = (function() {
 
 			function drawBounty(ctx) {
 				bountyBorderBtn.draw(ctx);
-				var pos = bountyBorderBtn.pos;
-				var b = bountyContentBtn.billboard;
-				var w = b.w;
-				var h = b.h;
-				var bountyPercent = bounty / 5;
+				var bountyPos = bountyBorderBtn.pos;
+				var bounty_b = bountyContentBtn.billboard;
+				var bounty_w = bounty_b.w;
+				var bounty_h = bounty_b.h;
+				var bountyPercent = Ptero.player.bounty / Ptero.player.maxBounty;
 				ctx.save();
-				b.transform(ctx,pos);
+				bounty_b.transform(ctx,bountyPos);
 				ctx.fillStyle = "#555";
-				ctx.fillRect(0,0,w,h);
+				ctx.fillRect(0,0,bounty_w,bounty_h);
 				ctx.fillStyle = bountyColor;
-				ctx.fillRect(0,0, bountyPercent * w, h);
+				ctx.fillRect(0,0, bountyPercent * bounty_w, bounty_h);
 				ctx.restore();
 			}
 

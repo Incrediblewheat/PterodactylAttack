@@ -155,10 +155,10 @@ Ptero.Bounty.prototype = {
 				// signal bounty completion with sound
 				Ptero.audio.play('bountyComplete');
 				Ptero.score.addBounties(1);
+				Ptero.player.earnBounty(1);
 
 				// earn bounty reward
 				Ptero.player.earnHealth(1);
-				Ptero.player.earnLife(1);
 
 				// kill all pteros
 				var len = this.cagedEnemies.length;
