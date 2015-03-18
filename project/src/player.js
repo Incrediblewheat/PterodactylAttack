@@ -15,6 +15,7 @@ Ptero.Player = function() {
 };
 
 Ptero.Player.prototype = {
+
 	toggleGod: function() {
 		this.setGod(!this.isGod);
 	},
@@ -45,7 +46,7 @@ Ptero.Player.prototype = {
 		this.bounty += inc;
 
 		if (this.bounty == this.maxBounty) {
-			Ptero.player.earnLives(1);
+			this.earnLives(1);
 		}
 	//	console.log("Bountybar: " +this.bounty, "/" +this.maxBounty);
 	},

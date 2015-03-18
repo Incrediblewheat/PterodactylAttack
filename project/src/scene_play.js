@@ -1,3 +1,4 @@
+
 Ptero.scene_play = (function() {
 
 	var state;
@@ -57,6 +58,7 @@ Ptero.scene_play = (function() {
 
 	var pauseBtn;
 	var scoreBtn;
+	var livesBtn;
 	var netLeftBtn, netRightBtn;
 	var eggBtns;
 
@@ -126,6 +128,9 @@ Ptero.scene_play = (function() {
 		scoreBtn = btns["score"];
 		scoreBtn.shouldDraw = false;
 
+		livesBtn = btns["LivesCount"];
+		livesBtn.shouldDraw = false;
+
 		pauseBtn = btns["pause"];
 		pauseBtn.onclick = pause;
 
@@ -186,6 +191,7 @@ Ptero.scene_play = (function() {
 				"bounty": true,
 				"score": true,
 				"bountybar": true,
+				"LivesCount": true,
 			};
 
 			var health = 0;
@@ -383,6 +389,9 @@ Ptero.scene_play = (function() {
 					if (shown["bountybar"]) {
 						drawBounty(ctx);
 					}
+					if (shown["LivesCount"]) {
+						livesBtn.draw(ctx);
+					}
 					buttonList.draw(ctx);
 					ctx.globalAlpha = 1;
 				}
@@ -476,6 +485,7 @@ Ptero.scene_play = (function() {
 			}
 
 			scoreBtn.text = Ptero.score.getScoreStr();
+			livesBtn.text = Ptero.score.getLives();
 
 			hud.draw(ctx);
 

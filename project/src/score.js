@@ -116,6 +116,9 @@ Ptero.score = (function(){
 		getScoreStr: function() {
 			return zeroPad(7,total);
 		},
+		getLives: function() {
+			return zeroPad(1, Ptero.player.lives);
+		},
 		addPoints: function(value) {
 			total += value;
 		},
