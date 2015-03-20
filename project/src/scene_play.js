@@ -134,9 +134,6 @@ Ptero.scene_play = (function() {
 		pauseBtn = btns["pause"];
 		pauseBtn.onclick = pause;
 
-//		livesPhBtn = btns["lives_ph"];
-//		livesBtn = btns["lives"];
-
 		netLeftBtn = btns["netLeft"];
 		netRightBtn = btns["netRight"];
 
@@ -237,17 +234,6 @@ Ptero.scene_play = (function() {
 				}
 
 				bountyColor = "#9A2EFE";
-/*				if (Math.floor(bountyTime*6) % 2 == 0) {
-					if (currentBounty < nextBounty) {
-						bountyColor = "#0F0";
-					}
-					else if (currentBounty > nextBounty) {
-						bountyColor = "#F00";
-					}
-					else if (currentBounty == 1) {
-						bountyColor = "#F00";
-					}
-				} */
 			}
 
 			function show(name, on) {

@@ -1,3 +1,4 @@
+
 Ptero.scene_gameover = (function(){
 
 	var buttonList;
@@ -24,18 +25,20 @@ Ptero.scene_gameover = (function(){
 			var btns = buttonList.namedButtons;
 
 			btns["replay"].onclick = function() {
-			isExiting = true;
-			cleanup();
-			Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
-			setTimeout(function(){
-				currWave = Ptero.overlord.waveNum;
-				currStage = Ptero.background.name;
-				Ptero.setScene(Ptero.scene_play);
-				Ptero.scene_play.switchBackground(currStage);
-				Ptero.overlord.createWaveScript(currWave);
-				console.log("Level Name: "+ Ptero.background.name);
-			}, 0);
-		};
+				isExiting = true;
+				cleanup();
+				Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
+				setTimeout(function(){
+					currWave = Ptero.overlord.waveNum;
+					currStage = Ptero.background.name;
+					Ptero.setScene(Ptero.scene_play);
+					Ptero.scene_play.switchBackground(currStage);
+					Ptero.overlord.createWaveScript(currWave);
+					Ptero.bountySize = Math.min(5, currWave+2);
+					Ptero.refreshBounty();
+					console.log("Level Name: "+ Ptero.background.name);
+				}, 0);
+			};
 		}
 		
 		btns["score"].text    = Ptero.score.getTotal().toString();

@@ -1119,7 +1119,7 @@ Ptero.OverlordWaves.prototype = {
 		this.waitingForTheEnd = false;
 		this.waveTitle = null;
 
-		Ptero.bountySize = Math.min(5, this.waveNum+2);
+		Ptero.bountySize = Math.min(4, this.waveNum+2);
 		Ptero.refreshBounty();
 
 		this.script.init();
@@ -1145,7 +1145,6 @@ Ptero.OverlordWaves.prototype = {
 		if (!this.stopped) {
 			this.script.update(dt);
 		}
-
 		// update enemies
 		var e,pos;
 		var i,len=this.enemies.length;
