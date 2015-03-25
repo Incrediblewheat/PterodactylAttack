@@ -99,6 +99,7 @@ Ptero.scene_play = (function() {
 
 	var time;
 	function init() {
+		Ptero.score.reset();
 		isPaused = false;
 		makeHud();
 

@@ -685,6 +685,7 @@ Ptero.OverlordTutor.prototype = {
 							Ptero.background.exit();
 							Ptero.background.onExitDone = function() {
 								setTimeout(function(){
+									Ptero.score.reset();
 									Ptero.player.lives = 3;
 									Ptero.setScene(Ptero.scene_play);
 								}, 1000);
@@ -1041,8 +1042,8 @@ Ptero.OverlordWaves.prototype = {
 		var pteroWaitTime = (function(){
 
 			var waveCap = 12;
-			var maxWait = 1.0;
-			var minWait = 0.1;
+			var maxWait = 1.5;
+			var minWait = 0.3;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
