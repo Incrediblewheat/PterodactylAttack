@@ -447,7 +447,7 @@ Ptero.OverlordTutor.prototype = {
 			{
 				time: 0,
 				action: function() {
-					that.showLessonTitle('Lesson 1','Hit flaplings 2 times');
+					that.showLessonTitle('Lesson 1','Blast flaplings 1 time');
 					Ptero.scene_play.getHud().show("health", true);
 					Ptero.scene_play.getHud().show("bounty", false);
 					that.isShowHealthMsg = true;
@@ -535,7 +535,7 @@ Ptero.OverlordTutor.prototype = {
 			{
 				time: 0,
 				action: function() {
-					that.showLessonTitle('Lesson 2','Hit adults 3 times');
+					that.showLessonTitle('Lesson 2','Blast adults 2 times');
 					Ptero.scene_play.getHud().show("health", true);
 					Ptero.scene_play.getHud().show("bounty", false);
 					that.isShowHealthMsg = true;
