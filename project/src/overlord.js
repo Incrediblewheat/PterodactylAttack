@@ -151,10 +151,10 @@ Ptero.OverlordTutor.prototype = {
 				var val = driver.val;
 				if (val) {
 					ctx.save();
-					ctx.translate(0, val.offset);
+					ctx.translate(-0, val.offset);
 					ctx.globalAlpha = val.alpha;
 
-					that.bountyArrowBtn.draw(ctx);
+					//that.bountyArrowBtn.draw(ctx);
 					that.bountyMsg1Btn.draw(ctx);
 					that.bountyMsg2Btn.draw(ctx);
 
@@ -685,6 +685,7 @@ Ptero.OverlordTutor.prototype = {
 							Ptero.background.exit();
 							Ptero.background.onExitDone = function() {
 								setTimeout(function(){
+									Ptero.player.lives = 3;
 									Ptero.setScene(Ptero.scene_play);
 								}, 1000);
 							};
@@ -882,9 +883,9 @@ Ptero.OverlordTutor.prototype = {
 		this.message && this.message.draw(ctx);
 		this.lessonTitle && this.lessonTitle.draw(ctx);
 		this.netTutor && this.netTutor.draw(ctx);
-		this.bountyTutor && this.bountyTutor.draw(ctx);
+		//this.bountyTutor && this.bountyTutor.draw(ctx);
 		this.skipTutor && this.skipTutor.draw(ctx);
-		this.isShowHealthMsg && this.healthMsgBtn.draw(ctx);
+		//this.isShowHealthMsg && this.healthMsgBtn.draw(ctx);
 	},
 	update: function(dt) {
 		this.message && this.message.update(dt);

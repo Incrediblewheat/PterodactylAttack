@@ -232,7 +232,6 @@ Ptero.scene_play = (function() {
 				else {
 					currentBounty = Math.max(nextBounty, currentBounty - bountySpeed*dt);
 				}
-
 				bountyColor = "#9A2EFE";
 			}
 
