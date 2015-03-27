@@ -99,7 +99,6 @@ Ptero.scene_play = (function() {
 
 	var time;
 	function init() {
-		Ptero.score.reset();
 		isPaused = false;
 		makeHud();
 
@@ -400,8 +399,6 @@ Ptero.scene_play = (function() {
 	}
 
 	function fadeToNextStage(onDone, name) {
-		//Play win music for when scene stage changes
-		Ptero.audio.play('Ptero_Win_Music');
 		hud.fadeOut(1, function() {
 			var nextName = name || Ptero.getNextBgName();
 			disableControls();

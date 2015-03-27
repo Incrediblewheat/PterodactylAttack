@@ -535,7 +535,7 @@ Ptero.OverlordTutor.prototype = {
 			{
 				time: 0,
 				action: function() {
-					that.showLessonTitle('Lesson 2','Blast adults 2 times');
+					that.showLessonTitle('Lesson 2','Blast big dactyls 2 times');
 					Ptero.scene_play.getHud().show("health", true);
 					Ptero.scene_play.getHud().show("bounty", false);
 					that.isShowHealthMsg = true;
@@ -1102,7 +1102,7 @@ Ptero.OverlordWaves.prototype = {
 	createEnemy: function(path, enemyType) {
 		var state = {
 			isAttack: true,
-			enemyType: enemyType,
+			//enemyType: enemyType,
 			points: path.models[0].points,
 		};
 		return Ptero.Enemy.fromState(state);
@@ -1139,6 +1139,9 @@ Ptero.OverlordWaves.prototype = {
 		Ptero.scene_play.fadeToNextStage(function(){
 			that.createWaveScript(that.waveNum + 1);
 			that.init();
+				//Play win music for when scene stage changes
+		Ptero.audio.play('Ptero_Win_Music');
+
 		});
 	},
 	update: function(dt) {
