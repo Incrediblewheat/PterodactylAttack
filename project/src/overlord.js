@@ -1027,8 +1027,8 @@ Ptero.OverlordWaves.prototype = {
 		var groupWaitTime = (function(){
 			// wait time will decrease to a certain floor
 
-			var waveCap = 12;
-			var maxWait = 3;
+			var waveCap = 15;
+			var maxWait = 2.5;
 			var minWait = 1;
 			var waitRange = maxWait - minWait;
 
@@ -1041,9 +1041,9 @@ Ptero.OverlordWaves.prototype = {
 		// the time to wait between each ptero in a ptero group
 		var pteroWaitTime = (function(){
 
-			var waveCap = 12;
-			var maxWait = 1.5;
-			var minWait = 0.3;
+			var waveCap = 15;
+			var maxWait = 2.5;
+			var minWait = 0.265;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
@@ -1102,7 +1102,7 @@ Ptero.OverlordWaves.prototype = {
 	createEnemy: function(path, enemyType) {
 		var state = {
 			isAttack: true,
-			//enemyType: enemyType,
+			enemyType: enemyType,
 			points: path.models[0].points,
 		};
 		return Ptero.Enemy.fromState(state);
@@ -1136,13 +1136,15 @@ Ptero.OverlordWaves.prototype = {
 	triggerNextWave: function() {
 		var that = this;
 		this.waitingForTheEnd = false;
-		Ptero.scene_play.fadeToNextStage(function(){
-			that.createWaveScript(that.waveNum + 1);
-			that.init();
-				//Play win music for when scene stage changes
-		Ptero.audio.play('Ptero_Win_Music');
-
-		});
+		that.createWaveScript(that.waveNum + 1);
+		if (this.waveNum == 5){
+			Ptero.audio.play('Ptero_Win_Music');
+			Ptero.scene_play.switchBackground('ice');
+		}
+		if (this.waveNum == 10){
+			Ptero.audio.play('Ptero_Win_Music');
+			Ptero.scene_play.switchBackground('volcano');
+		}
 	},
 	update: function(dt) {
 		this.waveTitle && this.waveTitle.update(dt);

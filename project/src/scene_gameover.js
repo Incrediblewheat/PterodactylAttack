@@ -33,7 +33,9 @@ Ptero.scene_gameover = (function(){
 					currWave = Ptero.overlord.waveNum;
 					currStage = Ptero.background.name;
 					Ptero.setScene(Ptero.scene_play);
+					console.log("setscene scene_play");
 					Ptero.scene_play.switchBackground(currStage);
+					console.log("switchbg "+ Ptero.background.name);
 					Ptero.overlord.createWaveScript(currWave);
 					Ptero.bountySize = Math.min(5, currWave+2);
 					Ptero.refreshBounty();

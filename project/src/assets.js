@@ -227,6 +227,7 @@ Ptero.assets = (function(){
 		"btns_loading"         : "layout/loading.json",
 		"btns_erasehighscore"  : "layout/erasehighscore.json",
 		"btns_thanks"          : "layout/thanks.json",
+		"btns_display"         : "layout/display.json",
 
 		// stage paths
 		"mountain_path00": "paths/mountain/path00.json",
@@ -273,7 +274,7 @@ Ptero.assets = (function(){
 		var name;
 
 		// load SVG images for faster drawing of vector images if we're not in Cocoon
-		if (!navigator.isCocoonJS) {
+		/*if (!navigator.isCocoonJS) {
 			var name;
 			for (name in vectorSources) {
 
@@ -286,7 +287,7 @@ Ptero.assets = (function(){
 					imageSources[name+"_white"] = vectorSources[name].replace(/svg$/, "white.svg");
 				}
 			}
-		}
+		}*/
 
 		// add metadata json sources to loading list
 		for (name in imageSources) {

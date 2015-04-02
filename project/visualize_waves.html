@@ -42,8 +42,8 @@ window.onload = function() {
 		var groupWaitTime = (function(){
 			// wait time will decrease to a certain floor
 
-			var waveCap = 12;
-			var maxWait = 3;
+			var waveCap = 15;
+			var maxWait = 2.5;
 			var minWait = 1;
 			var waitRange = maxWait - minWait;
 
@@ -56,9 +56,9 @@ window.onload = function() {
 		// the time to wait between each ptero in a ptero group
 		var pteroWaitTime = (function(){
 
-			var waveCap = 12;
-			var maxWait = 1.0;
-			var minWait = 0.1;
+			var waveCap = 15;
+			var maxWait = 1.3;
+			var minWait = 0.3;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
