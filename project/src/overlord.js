@@ -934,6 +934,7 @@ Ptero.OverlordWaves = function() {
 
 	this.waveNum = 0;
 	this.showWaveNum = false;
+	this.maxWave = 15;
 
 	this.createWaveScript(0);
 
@@ -1139,11 +1140,17 @@ Ptero.OverlordWaves.prototype = {
 		that.createWaveScript(that.waveNum + 1);
 		if (this.waveNum == 5){
 			Ptero.audio.play('Ptero_Win_Music');
-			Ptero.scene_play.switchBackground('ice');
+			Ptero.setScene(Ptero.scene_gameover);
 		}
 		if (this.waveNum == 10){
 			Ptero.audio.play('Ptero_Win_Music');
-			Ptero.scene_play.switchBackground('volcano');
+			Ptero.setScene(Ptero.scene_gameover);
+		}
+		if (this.waveNum == this.maxWave)
+		{
+			Ptero.background.exit();
+			Ptero.background.playOutTrack();
+			Ptero.setScene(Ptero.scene_gameover);
 		}
 	},
 	update: function(dt) {
@@ -1190,6 +1197,7 @@ Ptero.OverlordWaves.prototype = {
 				return true;
 			}
 			if (readyToEnd()) {
+				Ptero.audio.play('drop_menu');
 				this.showWaveTitle("WAVE COMPLETE!");
 				this.triggerNextWave();
 			}

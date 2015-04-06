@@ -11,6 +11,7 @@ Ptero.scene_gameover = (function(){
 
 	var isExiting;
 	function init() {
+	
 		Ptero.audio.play('Ptero_Lose_Music');
 		Ptero.audio.play('drop_menu');
 		Ptero.overlord.stopScript();
@@ -22,10 +23,16 @@ Ptero.scene_gameover = (function(){
 			var btns = buttonList.namedButtons;
 		}
 		else{
-			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_continue"]);
+			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_display"]);
 			var btns = buttonList.namedButtons;
 
-			btns["replay"].onclick = function() {
+			btns["continue"].onclick = function() {
+				if (Ptero.overlord.waveNum == 5){
+					Ptero.scene_play.switchBackground('ice');
+				}
+				if (Ptero.overlord.waveNum == 10){
+					Ptero.scene_play.switchBackground('volcano');
+				}
 				isExiting = true;
 				cleanup();
 				Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
@@ -60,10 +67,12 @@ Ptero.scene_gameover = (function(){
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game
 		setTimeout(function() {
+			Ptero.background.exit();
+			Ptero.background.playOutTrack();
 			if (Ptero.player.lives == 0){
 			}
 			else{
-				btns["replay"].enable();
+				btns["continue"].enable();
 			}	
 			btns["quit"].enable();
 		}, 1000);
