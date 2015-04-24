@@ -1,5 +1,5 @@
 
-Ptero.bountySize = 5;
+
 Ptero.refreshBounty = function() {
 	Ptero.bounty = new Ptero.Bounty(Ptero.bountySize);
 };

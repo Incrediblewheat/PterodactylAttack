@@ -11,46 +11,14 @@ Ptero.scene_gameover = (function(){
 
 	var isExiting;
 	function init() {
-	
-		Ptero.audio.play('Ptero_Lose_Music');
+		Ptero.audio.play('gameover');
 		Ptero.audio.play('drop_menu');
 		Ptero.overlord.stopScript();
 		isExiting = false;
 
-		if (Ptero.player.lives == 0){
+		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
+		var btns = buttonList.namedButtons;
 
-			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover"]);
-			var btns = buttonList.namedButtons;
-		}
-		else{
-			buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_display"]);
-			var btns = buttonList.namedButtons;
-
-			btns["continue"].onclick = function() {
-				if (Ptero.overlord.waveNum == 5){
-					Ptero.scene_play.switchBackground('ice');
-				}
-				if (Ptero.overlord.waveNum == 10){
-					Ptero.scene_play.switchBackground('volcano');
-				}
-				isExiting = true;
-				cleanup();
-				Ptero.audio.fadeOut('Ptero_Lose_Music',1.0);
-				setTimeout(function(){
-					currWave = Ptero.overlord.waveNum;
-					currStage = Ptero.background.name;
-					Ptero.setScene(Ptero.scene_play);
-					console.log("setscene scene_play");
-					Ptero.scene_play.switchBackground(currStage);
-					console.log("switchbg "+ Ptero.background.name);
-					Ptero.overlord.createWaveScript(currWave);
-					Ptero.bountySize = Math.min(5, currWave+2);
-					Ptero.refreshBounty();
-					console.log("Level Name: "+ Ptero.background.name);
-				}, 0);
-			};
-		}
-		
 		btns["score"].text    = Ptero.score.getTotal().toString();
 		btns["waves"].text    = Ptero.score.getWaves().toString();
 		btns["kills"].text    = Ptero.score.getKills().toString();
@@ -58,22 +26,14 @@ Ptero.scene_gameover = (function(){
 		btns["bounties"].text = Ptero.score.getBounties().toString();
 		btns["accuracy"].text = Math.floor(Ptero.score.getAccuracy()*100).toString();
 
-
 		btns["quit"].onclick = function() {
 			Ptero.setScene(Ptero.scene_menu);
-			Ptero.audio.stop('Ptero_Lose_Music');
+			Ptero.audio.stop('gameover');
 			Ptero.audio.play('theme');
 		};
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game
 		setTimeout(function() {
-			Ptero.background.exit();
-			Ptero.background.playOutTrack();
-			if (Ptero.player.lives == 0){
-			}
-			else{
-				btns["continue"].enable();
-			}	
 			btns["quit"].enable();
 		}, 1000);
 
@@ -88,7 +48,6 @@ Ptero.scene_gameover = (function(){
 		ctx.fillStyle = "rgba(0,0,0,0.5)";
 		ctx.fillRect(0,0,Ptero.screen.getWindowWidth(),Ptero.screen.getWindowHeight());
 		if (!isExiting) {
-
 			buttonList.draw(ctx);
 		}
 	}

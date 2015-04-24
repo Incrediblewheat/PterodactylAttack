@@ -1022,6 +1022,7 @@ Ptero.OverlordWaves.prototype = {
 		addEvent(0, function() {
 			that.showWaveTitle("wave " + (waveNum+1).toString());
 			Ptero.score.addWaves(1);
+			Ptero.audio.play('damage');
 		});
 
 		// the time to wait between each ptero group
@@ -1122,7 +1123,7 @@ Ptero.OverlordWaves.prototype = {
 		this.waitingForTheEnd = false;
 		this.waveTitle = null;
 
-		Ptero.bountySize = Math.min(4, this.waveNum+2);
+		Ptero.bountySize = Math.min(5, this.waveNum+2);
 		Ptero.refreshBounty();
 
 		this.script.init();
@@ -1139,17 +1140,13 @@ Ptero.OverlordWaves.prototype = {
 		this.waitingForTheEnd = false;
 		that.createWaveScript(that.waveNum + 1);
 		if (this.waveNum == 5){
-			Ptero.audio.play('Ptero_Win_Music');
-			Ptero.setScene(Ptero.scene_gameover);
+			Ptero.setScene(Ptero.scene_stageComplete);
 		}
 		if (this.waveNum == 10){
-			Ptero.audio.play('Ptero_Win_Music');
-			Ptero.setScene(Ptero.scene_gameover);
+			Ptero.setScene(Ptero.scene_stageComplete);
 		}
 		if (this.waveNum == this.maxWave)
 		{
-			Ptero.background.exit();
-			Ptero.background.playOutTrack();
 			Ptero.setScene(Ptero.scene_gameover);
 		}
 	},
@@ -1197,7 +1194,6 @@ Ptero.OverlordWaves.prototype = {
 				return true;
 			}
 			if (readyToEnd()) {
-				Ptero.audio.play('drop_menu');
 				this.showWaveTitle("WAVE COMPLETE!");
 				this.triggerNextWave();
 			}

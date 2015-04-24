@@ -112,7 +112,7 @@ Ptero.scene_play = (function() {
 
 			function trigger() {
 				if (debugBtn1Pressed && debugBtn2Pressed && Ptero.background.isIdle) {
-					Ptero.overlord.skipThisWave();
+				//	Ptero.overlord.skipThisWave();
 				}
 			}
 
@@ -431,8 +431,11 @@ Ptero.scene_play = (function() {
 
 	function update(dt) {
 		if (!isPaused) {
-			if (Ptero.player.health <= 0){
+			if (Ptero.player.health <= 0 & Ptero.player.lives == 0){
 				Ptero.setScene(Ptero.scene_gameover);
+			}
+			else if (Ptero.player.health <= 0){
+				Ptero.setScene(Ptero.scene_continue);
 			}
 			else {
 				time += dt;

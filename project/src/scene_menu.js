@@ -18,7 +18,7 @@ Ptero.scene_menu = (function(){
 	function cleanup() {
 		Ptero.orb.disableTouch();
 		Ptero.bulletpool.clear();
-		warnBtn.enable();
+		warnBtn.disable();
 	}
 
 	var fadeOutTime;

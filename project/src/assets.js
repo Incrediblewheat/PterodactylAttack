@@ -40,7 +40,8 @@ Ptero.assets = (function(){
 		"volcano_loop"   : "audio/volcano-loop",
 		"volcano_outro"  : "audio/volcano-outro",
 		"Ptero_Win_Music": "audio/Ptero_Win_Music_02",
-		"Ptero_Lose_Music" : "audio/Ptero_Lose_Music_02",
+		"gameover"       : "audio/Ptero_Lose_Music_02",
+		"Ptero_Continue" : "audio/Ptero_Continue",
 	};
 
 	var imageSources = {
