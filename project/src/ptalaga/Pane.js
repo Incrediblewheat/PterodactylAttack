@@ -12,13 +12,15 @@ Ptero.Ptalaga.Pane = function (w,h,axes,title) {
 	this.nodeRadius = 4;
 	var that = this;
 	window.addEventListener("keydown", function(e) {
-		if (e.keyCode == 18) {
+		if (e.keyCode == 32) { // spacebar
 			that.isZoomPanKey = true;
+			e.preventDefault();  // prevent spacebar browser scroll
 		}
 	});
 	window.addEventListener("keyup", function(e) {
-		if (e.keyCode == 18) {
+		if (e.keyCode == 32) {
 			that.isZoomPanKey = false;
+			e.preventDefault();  
 		}
 	});
 };
@@ -472,7 +474,7 @@ Ptero.Ptalaga.Pane.prototype = {
 		}
 	},
 	mouseScroll: function(x,y,delta,deltaX,deltaY) {
-		if (this.isZoomPanKey) {
+		if (that.isZoomPanKey) {
 			this.setFocusPoint(x,y);
 
 			// from: http://stackoverflow.com/questions/2916081/zoom-in-on-a-point-using-scale-and-translate

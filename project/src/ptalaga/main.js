@@ -63,11 +63,11 @@ window.onload = function() {
 
 		Ptero.Ptalaga.enemy_model_list.play();
 		window.addEventListener("keydown", function(e) {
-			if (e.keyCode == 32) {
-				e.preventDefault();
+			if (e.keyCode == 192) {  // tilde = 192. using for now while reconfiguring linux friendly keyCodes
+			//	e.preventDefault();  //use preventDefault to prevent spacebar from scrolling the browser screen.
 				Ptero.Ptalaga.enemy_model_list.togglePlay();
 			}
-			else if (e.keyCode == 80) {
+			else if (e.keyCode == 80) { // 'P'=80
 				Ptero.Ptalaga.enemy_model_list.togglePreview();
 			}
 		});
