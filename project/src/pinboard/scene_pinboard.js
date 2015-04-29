@@ -264,6 +264,11 @@ Ptero.Pinboard.scene_pinboard = (function(){
 			"christian",
 			"ben",
 			"dead",
+			"FB-fLogo-printpackaging",
+			"g+256",
+			"Local_Phone",
+			"PteroAttack_Icon_Settings",
+			"PteroAttack_Icon_Trophy",
 		];
 		var i,len=images.length;
 		for (i=0; i<len; i++) {
