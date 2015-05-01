@@ -93,11 +93,13 @@ Ptero.assets = (function(){
 		"ben" : "img/people/ben.png",
 		"dead" : "img/people/dead.png",
 
+		//v1.2 assets
 		"FB-fLogo-printpackaging" : "img/FB-fLogo-printpackaging.png",
 		"g+256" : "img/g+256.png",
 		"Local_Phone" : "img/Local_Phone.png",
 		"PteroAttack_Icon_Settings" : "img/PteroAttack_Icon_Settings.png",
 		"PteroAttack_Icon_Trophy" : "img/PteroAttack_Icon_Trophy.png",
+		"lock" : "img/lock.png",
 	};
 
 	var vectorSources = {
