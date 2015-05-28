@@ -12,8 +12,9 @@ Ptero.settings = (function(){
 		"high_waves": 0,
 		"high_kills": 0,
 		"high_captures": 0,
-		"high_bounties": 0,
+		"high_bounties": 0
 	};
+
 	function initValues() {
 		if (!values) {
 			values = {};
@@ -28,16 +29,41 @@ Ptero.settings = (function(){
 	}
 	initValues();
 
+	var rankStorage;
+	var localRanks = [];
+	var defaultScores = {
+		"rankedScore": 0,
+		"rankedWaves": 0,
+		"rankedKills": 0,
+		"rankedCaptures": 0,
+		"rankedBounties": 0,
+		"difficulty": 'easy',
+		"player_name": 'player',
+		"rankNum": 0
+	};
+
+	function initRanks() {
+		if (!localRanks) {
+			localRanks = [];
+		} 
+		var n;
+		for (i = 0; i < 5; i++) {
+			if (localRanks[i] == undefined) {
+				localRanks[i] = defaultScores;
+				n = i+1;
+				localRanks[i].rankNum = (n.toString() + ". ");
+			}
+		}
+	}
+	initRanks();
+
 	var key = "settings";
 
 	return {
 		clearHighScores: function() {
-			values["high_score"] = 0;
-			values["high_waves"] = 0;
-			values["high_kills"] = 0;
-			values["high_captures"] = 0;
-			values["high_bounties"] = 0;
-			this.save();
+			localRanks = null;
+			initRanks();
+			this.rankSave();
 		},
 		set: function(key,value) {
 			values[key] = value;
@@ -45,6 +71,25 @@ Ptero.settings = (function(){
 		},
 		get: function(key) {
 			return values[key];
+		},
+		rankSet: function(newRanks) {
+			localRanks = newRanks;
+			this.rankSave();
+		},
+		rankGet: function() {
+			return localRanks;
+		},
+		rankLoad: function() {
+			localRanks = null;
+			try {
+				localRanks = JSON.parse(localStorage.getItem('localScores'));
+			}
+			catch (e) {
+			}
+			initRanks();
+		},
+		rankSave: function() {
+			localStorage.setItem('localScores', JSON.stringify(localRanks));
 		},
 		load: function() {
 			values = null;
@@ -54,7 +99,7 @@ Ptero.settings = (function(){
 			catch (e) {
 			}
 			initValues();
-			console.log(values);
+	//		console.log(values);
 		},
 		save: function() {
 			localStorage[key] = JSON.stringify(values);

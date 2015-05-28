@@ -82,7 +82,7 @@ Ptero.scene_menu = (function(){
 			e.whenHit = (function(e,action){
 				return function() {
 					e.explode();
-					Ptero.screen.shake();
+				//	Ptero.screen.shake();   //need to fix canvas overdraw
 					setTimeout(action, 500);
 				};
 			})(e,action);
@@ -106,8 +106,8 @@ Ptero.scene_menu = (function(){
 	}
 
 	function init() {
-		Ptero.score.reset();
 		Ptero.player = new Ptero.Player();
+		Ptero.score.reset();
 		// reset the score
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
@@ -137,8 +137,16 @@ Ptero.scene_menu = (function(){
 			text: 'OPTIONS',
 			billboard: new Ptero.Billboard(200,50,400,100),
 			pos: {x:0, y:0, z:0},
-		});
+		}); 
 
+	/*	easyBtn = new Ptero.Button({
+			fontSprite: Ptero.assets.fonts['whitefont'],
+			textAlign: 'center',
+			text: 'Easy',
+			billboard: new Ptero.Billboard(200,50,400,100),
+			pos: {x:0, y:0, z:0},
+
+		}) */
 
 		createPteros();
 		orbInitialized = false;
@@ -205,6 +213,7 @@ Ptero.scene_menu = (function(){
 		var buttons = [
 			optionsBtn,
 			startBtn,
+	//		easyBtn,
 		];
 		var offset = [
 			-0.05,

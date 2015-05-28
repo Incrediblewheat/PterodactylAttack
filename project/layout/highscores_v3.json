@@ -10,23 +10,24 @@
 			"h": 732,
 			"font": "whitefont",
 			"textAlign": "center",
-			"text": "                                ",
+			"text": "",
 			"imageName": "backplate_mountain"
 		},
 		{
 			"name": "back",
-			"x": 0.6273824677706741,
-			"y": 0.8900000000000001,
+			"x": 0.09943603919924553,
+			"y": 0.5171428571428571,
 			"centerX": 123.16384446074859,
 			"centerY": 35.511496196111466,
 			"w": 237.91428571428565,
 			"h": 77.19442096365145,
 			"font": "buttonfont",
 			"textAlign": "center",
-			"text": "back",
+			"text": "home",
 			"imageName": "button_plank"
 		},
 		{
+			"name": "player1",
 			"x": 0.2612413692677357,
 			"y": 0.35960484571428575,
 			"centerX": 99.39957124491346,
@@ -38,8 +39,8 @@
 			"text": "1. player"
 		},
 		{
-			"name": "findMe",
-			"x": 0.36786701428571417,
+			"name": "erase",
+			"x": 0.5,
 			"y": 0.8952447746031745,
 			"centerX": 120.38497887654515,
 			"centerY": 39.828571428571564,
@@ -47,7 +48,7 @@
 			"h": 79.65714285714307,
 			"font": "buttonfont",
 			"textAlign": "center",
-			"text": "find me",
+			"text": "erase",
 			"imageName": "button_plank"
 		},
 		{
@@ -106,6 +107,7 @@
 			"text": "5. player"
 		},
 		{
+			"name": "difficulty1",
 			"x": 0.5,
 			"y": 0.3588288914285717,
 			"centerX": 98.72443977142848,
@@ -117,6 +119,7 @@
 			"text": "difficulty"
 		},
 		{
+			"name": "score1",
 			"x": 0.7621557028571427,
 			"y": 0.3592501942857146,
 			"centerX": 68.39063405714273,
@@ -214,6 +217,71 @@
 			"font": "whitefont",
 			"textAlign": "right",
 			"text": "score"
+		},
+		{
+			"name": "localPhone",
+			"x": 0.6889055863541086,
+			"y": 0.17122221714285707,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 98.68804754285736,
+			"h": 98.6880475428571,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "Local_Phone"
+		},
+		{
+			"name": "gplus",
+			"x": 0.5959874438857143,
+			"y": 0.16930940342857143,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 104.48104009142855,
+			"h": 100,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "button_plank"
+		},
+		{
+			"name": "fb",
+			"x": 0.5046988084571429,
+			"y": 0.17013977782857148,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 104.48104009142855,
+			"h": 100,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "button_plank"
+		},
+		{
+			"name": "settings",
+			"x": 0.8230357142857143,
+			"y": 0.16999999999999996,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 211,
+			"h": 170,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "PteroAttack_Icon_Settings"
+		},
+		{
+			"name": "trophy",
+			"x": 0.8230357142857143,
+			"y": 0.602857142857143,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 211,
+			"h": 170,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "PteroAttack_Icon_Trophy"
 		}
 	]
 }

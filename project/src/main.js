@@ -60,6 +60,8 @@ window.onload = function() {
 		onLoad: function() {
 			console.log('loading settings');
 			Ptero.settings.load();
+			console.log('loading ranks');
+			Ptero.settings.rankLoad();
 			console.log('creating backgrounds');
 			Ptero.createBackgrounds();
 			console.log("initing input");

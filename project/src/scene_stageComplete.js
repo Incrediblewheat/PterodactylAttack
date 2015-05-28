@@ -16,7 +16,7 @@ Ptero.scene_stageComplete = (function(){
 		Ptero.overlord.stopScript();
 		isExiting = false;
 
-		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_display"]);
+		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_stagecomplete"]);
 		var btns = buttonList.namedButtons;
 		
 		btns["score"].text    = Ptero.score.getTotal().toString();
@@ -26,7 +26,7 @@ Ptero.scene_stageComplete = (function(){
 		btns["bounties"].text = Ptero.score.getBounties().toString();
 		btns["accuracy"].text = Math.floor(Ptero.score.getAccuracy()*100).toString();
 		
-		btns["continue"].onclick = function() {
+		btns["next"].onclick = function() {
 			isExiting = true;
 			cleanup();
 
@@ -56,14 +56,10 @@ Ptero.scene_stageComplete = (function(){
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game
 		setTimeout(function() {
-			btns["continue"].enable();
+			btns["next"].enable();
 			btns["quit"].enable();
 		}, 1000);
 
-		isNewHigh = Ptero.score.commitStats();
-		if (!isNewHigh.score) {
-			btns["highScore"].text = "continue?";
-		}
 	}
 
 	function draw(ctx) {

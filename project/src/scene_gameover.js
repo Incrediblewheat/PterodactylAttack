@@ -36,11 +36,11 @@ Ptero.scene_gameover = (function(){
 		setTimeout(function() {
 			btns["quit"].enable();
 		}, 1000);
-
-		isNewHigh = Ptero.score.commitStats();
-		if (!isNewHigh.score) {
+		
+		Ptero.score.commitStats(Ptero.score.getTotal());
+	/*	if (!isNewHigh.score) {
 			btns["highScore"].text = "continue?";
-		}
+		} */
 	}
 
 	function draw(ctx) {

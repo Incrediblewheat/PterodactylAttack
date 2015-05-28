@@ -374,14 +374,14 @@ Ptero.Background.prototype = {
 				layer.sprites.push(this.sprites[d.images[j]]);
 			}
 
-			console.log(d);
+	/*		console.log(d);
 			if (!d.anim) {
 				d.anim = {
 					"values": [0,0],
 					"type": "intro",
 					"time": 0,
 				};
-			}
+			}  */
 
 			var vals = d.anim.values;
 			if (d.anim.type == 'intro') {

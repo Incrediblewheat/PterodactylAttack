@@ -1,5 +1,0 @@
-//This is the scene the player see upon stage or game completion
-
-scene_stageComplete = function(){
-	
-}

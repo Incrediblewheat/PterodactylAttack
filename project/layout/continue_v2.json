@@ -27,6 +27,7 @@
 			"text": "124650"
 		},
 		{
+			"name": "kills text",
 			"x": 0.5,
 			"y": 0.4731746031746033,
 			"centerX": 249.53617195364026,
@@ -74,6 +75,7 @@
 			"text": "34"
 		},
 		{
+			"name": "captures text",
 			"x": 0.5,
 			"y": 0.5728571428571431,
 			"centerX": 249.53617195364026,
@@ -85,6 +87,7 @@
 			"text": "captures"
 		},
 		{
+			"name": "bounties text",
 			"x": 0.5,
 			"y": 0.6671428571428573,
 			"centerX": 249.53617195364026,
@@ -96,6 +99,7 @@
 			"text": "bounties"
 		},
 		{
+			"name": "hit percent text",
 			"x": 0.5,
 			"y": 0.7632000000000002,
 			"centerX": 249.53617195364026,
@@ -145,7 +149,7 @@
 			"imageName": "button_plank"
 		},
 		{
-			"name": "continue",
+			"name": "continue text",
 			"x": 0.5,
 			"y": 0.08359033978174596,
 			"centerX": 278.29241071428567,
@@ -157,6 +161,7 @@
 			"text": "continue?"
 		},
 		{
+			"name": "waves text",
 			"x": 0.5,
 			"y": 0.36857142857142855,
 			"centerX": 249.53617195364026,
