@@ -2,7 +2,7 @@
 	"localImages": {},
 	"objects": [
 		{
-			"name" : null,
+			"name": null,
 			"x": 0.5,
 			"y": 0.4518696125907991,
 			"centerX": 566.6011428571428,
@@ -15,7 +15,7 @@
 			"imageName": "cliff"
 		},
 		{
-			"name" : null,
+			"name": null,
 			"x": 0.5,
 			"y": 0.3320028664961075,
 			"centerX": 385.70628571428574,
@@ -26,6 +26,18 @@
 			"textAlign": "center",
 			"text": "",
 			"imageName": "logo"
+		},
+		{
+			"x": 0.48301262083780855,
+			"y": 0.782296455424275,
+			"centerX": 135.62758324382344,
+			"centerY": 8.853447905477992,
+			"w": 277.54285714285703,
+			"h": 65.73383458646596,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "loading"
 		}
 	]
 }

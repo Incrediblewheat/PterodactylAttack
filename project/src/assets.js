@@ -100,6 +100,7 @@ Ptero.assets = (function(){
 		"PteroAttack_Icon_Settings" : "img/menu/PteroAttack_Icon_Settings.png",
 		"PteroAttack_Icon_Trophy" : "img/menu/PteroAttack_Icon_Trophy.png",
 		"lock" : "img/lock.png",
+		"loading" : "img/loading.png"
 	};
 
 	var vectorSources = {
@@ -226,7 +227,7 @@ Ptero.assets = (function(){
 		"btns_tutorial"        : "layout/tutorial_v1.json",
 		"btns_wave"            : "layout/wave.json",
 		"btns_options"         : "layout/options.json",
-		"btns_highscore"       : "layout/highscores_v3.json",
+		"btns_highscore"       : "layout/highscores_v4.json",
 		"btns_credits"         : "layout/credits.json",
 		"btns_credits_content" : "layout/credits_content_v1.json",
 		"btns_game"            : "layout/game_v1.json",

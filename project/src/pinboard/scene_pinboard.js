@@ -272,6 +272,7 @@ Ptero.Pinboard.scene_pinboard = (function(){
 			"PteroAttack_Icon_Settings",
 			"PteroAttack_Icon_Trophy",
 			"lock",
+			"loading"
 		];
 		var i,len=images.length;
 		for (i=0; i<len; i++) {

@@ -14,7 +14,7 @@ Ptero.scene_highscore = (function(){
 		var btns = buttonList.namedButtons;
 
 		var ranks = Ptero.settings.rankGet();
-		btns["player"+"1"].text  = (ranks[0].rankNum + ranks[0].player_name.toString());
+		btns["player"+"1"].text  = ranks[0].player_name;
 		btns["difficulty1"].text = ranks[0].difficulty.toString();
 	/*	btns["kills"].text    = Ptero.settings.get("high_kills").toString();
 		btns["caps"].text     = Ptero.settings.get("high_captures").toString();

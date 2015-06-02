@@ -39,7 +39,7 @@ Ptero.settings = (function(){
 		"rankedBounties": 0,
 		"difficulty": 'easy',
 		"player_name": 'player',
-		"rankNum": 0
+	//	"rankNum": 0
 	};
 
 	function initRanks() {
@@ -51,7 +51,7 @@ Ptero.settings = (function(){
 			if (localRanks[i] == undefined) {
 				localRanks[i] = defaultScores;
 				n = i+1;
-				localRanks[i].rankNum = (n.toString() + ". ");
+		//		localRanks[i].rankNum = (n.toString() + ". ");
 			}
 		}
 	}
