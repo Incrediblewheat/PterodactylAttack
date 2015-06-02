@@ -51,11 +51,13 @@ window.onload = function() {
 			'bg_menu',
 			'cliff',
 			'logo',
+			'loading',
 		],
 		onPreload: function() {
 			console.log('starting title scene');
 			Ptero.setScene(Ptero.scene_title);
-			Ptero.executive.start();
+			Ptero.executive.
+			start();
 		},
 		onLoad: function() {
 			console.log('loading settings');

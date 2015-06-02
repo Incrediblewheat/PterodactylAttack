@@ -15,7 +15,8 @@ Ptero.scene_highscore = (function(){
 
 		var ranks = Ptero.settings.rankGet();
 		btns["player"+"1"].text  = ranks[0].player_name;
-		btns["difficulty1"].text = ranks[0].difficulty.toString();
+		btns["player1"].font = "redscorefont";
+		btns["difficulty1"].text = ranks[0].difficulty;
 	/*	btns["kills"].text    = Ptero.settings.get("high_kills").toString();
 		btns["caps"].text     = Ptero.settings.get("high_captures").toString();
 		btns["bounties"].text = Ptero.settings.get("high_bounties").toString();
