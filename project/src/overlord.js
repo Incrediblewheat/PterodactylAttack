@@ -1070,11 +1070,11 @@ Ptero.OverlordWaves.prototype = {
 		})();
 
 		console.log('WAVE',waveNum+1);
-	/*	console.log('group wait time',groupWaitTime);
+		console.log('group wait time',groupWaitTime);
 		console.log('ptero wait time',pteroWaitTime);
 		console.log('group start',groupStart);
 		console.log('group growth',groupGrowth);
-		console.log('num groups', numGroups); */
+		console.log('num groups', numGroups);
 
 		// create the ptero events
 		var i,j,groupCount;
