@@ -1,5 +1,5 @@
 //version 1.2
-Ptero.scene_highscore = (function(){
+Ptero.scene_gameover_hs = (function(){
 
 	var buttonList;
 
@@ -8,11 +8,10 @@ Ptero.scene_highscore = (function(){
 	}
 
 	function init() {
-
-		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_highscore"]);
-
+		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover_hs"]);
 		var btns = buttonList.namedButtons;
 
+		isExiting = false;
 		var ranks = Ptero.settings.rankGet();
 		//TODO: highlight new score entry
 		//TODO: make this elegant with a loop you dummy
@@ -22,7 +21,7 @@ Ptero.scene_highscore = (function(){
 
 		btns["player2"].text  = ranks[1].player_name;
 		btns["difficulty2"].text = ranks[1].difficulty;
-		btns["score2"].text = ranks[1].rankedScore.toString();;
+		btns["score2"].text = ranks[1].rankedScore.toString();
 
 		btns["player3"].text  = ranks[2].player_name;
 		btns["difficulty3"].text = ranks[2].difficulty;
@@ -40,17 +39,6 @@ Ptero.scene_highscore = (function(){
 		btns["caps"].text     = Ptero.settings.get("high_captures").toString();
 		btns["bounties"].text = Ptero.settings.get("high_bounties").toString();
     */
-		btns["erase"].onclick = function() {
-			Ptero.setScene(Ptero.scene_erasehighscore);
-		};
-
-		btns["settings"].onclick = function() {
-			Ptero.setScene(Ptero.scene_options);
-		};
-
-		btns["trophy"].onclick = function() {
-			//Ptero.setScene(Ptero.scene_highscore);
-		};
 
 		btns["localPhone"].onclick = function() {
 			//do nothing for now
@@ -63,14 +51,16 @@ Ptero.scene_highscore = (function(){
 		btns["fb"].onclick = function() {
 			//do nothing for now
 		};
-		var b = btns["back"];
-		b.isClickDelay = true;
-		b.onclick = function() {
+		btns["quit"].onclick = function() {
+			isExiting = true;
 			cleanup();
+
 			Ptero.setScene(Ptero.scene_menu);
+			Ptero.audio.stop('gameover');
+			Ptero.audio.play('theme');
 		};
 
-		buttonList.enable();
+		buttonList.enable();		
 	}
 
 	function update(dt) {
@@ -78,7 +68,11 @@ Ptero.scene_highscore = (function(){
 
 	function draw(ctx) {
 		Ptero.deferredSprites.draw(ctx);
-		buttonList.draw(ctx);
+		ctx.fillStyle = "rgba(0,0,0,0.5)";
+		ctx.fillRect(0,0,Ptero.screen.getWindowWidth(),Ptero.screen.getWindowHeight());
+		if (!isExiting) {
+			buttonList.draw(ctx);
+		}
 	}
 
 	return {

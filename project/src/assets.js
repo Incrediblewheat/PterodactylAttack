@@ -234,6 +234,7 @@ Ptero.assets = (function(){
 		"btns_pause"           : "layout/pause.json",
 		"btns_continue"        : "layout/continue_v2.json",
 		"btns_gameover"        : "layout/gameover_v2.json",
+		"btns_gameover_hs"	   : "layout/gameover_hs.json",
 		"btns_loading"         : "layout/loading.json",
 		"btns_erasehighscore"  : "layout/erasehighscore.json",
 		"btns_thanks"          : "layout/thanks.json",
