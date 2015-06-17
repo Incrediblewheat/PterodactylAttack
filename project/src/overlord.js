@@ -416,7 +416,8 @@ Ptero.OverlordTutor.prototype = {
 		}
 
 		function revive() {
-			Ptero.orb.setNextOrigin(0,-1);
+			Ptero.player.earnLives(1);
+			Ptero.orb.setNextOrigin(0,-0.685);
 			Ptero.orb.enableTouch();
 			that.createLesson1Script();
 		}
@@ -456,7 +457,7 @@ Ptero.OverlordTutor.prototype = {
 			{
 				dt: 0.5,
 				action: function() {
-					Ptero.orb.setNextOrigin(0,-1);
+					Ptero.orb.setNextOrigin(0,-.685);
 				}
 			},
 			{
@@ -504,7 +505,8 @@ Ptero.OverlordTutor.prototype = {
 		}
 
 		function revive() {
-			Ptero.orb.setNextOrigin(0,-1);
+			Ptero.player.earnLives(1);
+			Ptero.orb.setNextOrigin(0,-.685);
 			Ptero.orb.enableTouch();
 			that.createLesson2Script();
 		}
@@ -589,7 +591,8 @@ Ptero.OverlordTutor.prototype = {
 		}
 
 		function revive() {
-			Ptero.orb.setNextOrigin(0,-1);
+			Ptero.player.earnLives(1);
+			Ptero.orb.setNextOrigin(0,-.685);
 			Ptero.scene_play.enableNetBtn(true);
 			Ptero.orb.enableTouch();
 			that.createLesson3Script();
@@ -729,7 +732,8 @@ Ptero.OverlordTutor.prototype = {
 		}
 
 		function revive() {
-			Ptero.orb.setNextOrigin(0,-1);
+			Ptero.player.earnLives(1);
+			Ptero.orb.setNextOrigin(0,-.685);
 			Ptero.scene_play.enableNetBtn(true);
 			Ptero.orb.enableTouch();
 			that.createLesson4Script();

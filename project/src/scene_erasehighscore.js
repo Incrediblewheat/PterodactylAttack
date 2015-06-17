@@ -22,7 +22,7 @@ Ptero.scene_erasehighscore = (function(){
 			Ptero.setScene(Ptero.scene_highscore);
 		};
 
-		btns["wrench"].onclick = function() {
+/*		btns["wrench"].onclick = function() {
 			Ptero.setScene(Ptero.scene_options);
 		};
 
@@ -38,7 +38,7 @@ Ptero.scene_erasehighscore = (function(){
 		b.isClickDelay = true;
 		b.onclick = function() {
 			Ptero.setScene(Ptero.scene_menu);
-		};
+		}; */
 
 		buttonList.enable();
 	}

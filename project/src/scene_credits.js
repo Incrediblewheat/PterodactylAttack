@@ -28,9 +28,9 @@ Ptero.scene_credits = (function(){
 			Ptero.setScene(Ptero.scene_highscore);
 		};
 
-		btns["scroll"].onclick = function() {
+/*		btns["scroll"].onclick = function() {
 			Ptero.setScene(Ptero.scene_credits);
-		};
+		}; */
 
 		var b = btns["back"];
 		b.isClickDelay = true;

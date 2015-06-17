@@ -18,7 +18,7 @@ Ptero.scene_menu = (function(){
 	function cleanup() {
 		Ptero.orb.disableTouch();
 		Ptero.bulletpool.clear();
-		warnBtn.disable();
+//		warnBtn.disable();
 	}
 
 	var fadeOutTime;
@@ -102,7 +102,7 @@ Ptero.scene_menu = (function(){
 		Ptero.orb.init();
 		Ptero.orb.enableGuide(true);
 		Ptero.orb.setTargets(enemies);
-        Ptero.orb.setNextOrigin(0,-1);
+        Ptero.orb.setNextOrigin(0,-0.685);
 	}
 
 	function init() {
@@ -112,14 +112,14 @@ Ptero.scene_menu = (function(){
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
 
-		var buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_warn"]);
+/*		var buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_warn"]);
 		var btns = buttonList.namedButtons;
 		warnBtn = btns["warn"];
 		warnBtn.onclick = function() {
 			Ptero.scene_controlcenter.animateIn();
 			switchScene(Ptero.scene_controlcenter);
 		};
-		warnBtn.enable();
+		warnBtn.enable(); */
 
 		fadeOutTime = null;
 
@@ -223,7 +223,7 @@ Ptero.scene_menu = (function(){
 			e = enemies[i];
 			if (e.path.time >= e.path.totalTime) {
 				if (i == 0) {
-					warnBtn.draw(ctx);
+	//				warnBtn.draw(ctx);
 				}
 				pos = e.getPosition();
 				pos = frustum.projectToNear(pos);

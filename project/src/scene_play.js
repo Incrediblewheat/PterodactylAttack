@@ -418,7 +418,7 @@ Ptero.scene_play = (function() {
 		state = "intro";
 		hud.hide();
 		Ptero.orb.init();
-		Ptero.orb.setNextOrigin(0,-1);
+		Ptero.orb.setNextOrigin(0,-0.685);
 		Ptero.setBackground(name);
 		Ptero.background.startTrack();
 		Ptero.background.onIdle = function() {

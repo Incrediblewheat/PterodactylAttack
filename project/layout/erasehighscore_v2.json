@@ -1,0 +1,54 @@
+{
+	"localImages": {},
+	"objects": [
+		{
+			"x": 0.5,
+			"y": 0.5,
+			"centerX": 374.0359281437119,
+			"centerY": 366,
+			"w": 748.0718562874238,
+			"h": 732,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "backplate_mountain"
+		},
+		{
+			"name": "erase",
+			"x": 0.5,
+			"y": 0.3707460317460317,
+			"centerX": 141.05926459083105,
+			"centerY": 39.828571428571564,
+			"w": 336.4271006102334,
+			"h": 79.65714285714307,
+			"font": "buttonfont",
+			"textAlign": "center",
+			"text": "erase",
+			"imageName": "button_plank"
+		},
+		{
+			"x": 0.5,
+			"y": 0.20917460317460335,
+			"centerX": 261.12248693969593,
+			"centerY": 39.51999999999987,
+			"w": 601.2392595936776,
+			"h": 79.03999999999974,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "Erase highscores?"
+		},
+		{
+			"name": "cancel",
+			"x": 0.5,
+			"y": 0.5,
+			"centerX": 141.05926459083105,
+			"centerY": 39.828571428571564,
+			"w": 336.4271006102334,
+			"h": 79.65714285714307,
+			"font": "buttonfont",
+			"textAlign": "center",
+			"text": "cancel",
+			"imageName": "button_plank"
+		}
+	]
+}
