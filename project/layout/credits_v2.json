@@ -1,0 +1,56 @@
+{
+	"localImages": {},
+	"objects": [
+		{
+			"x": 0.5,
+			"y": 0.5,
+			"centerX": 374.0359281437119,
+			"centerY": 366,
+			"w": 748.0718562874238,
+			"h": 732,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "backplate_mountain"
+		},
+		{
+			"name": "back",
+			"x": 0.09943603919924553,
+			"y": 0.5171428571428571,
+			"centerX": 123.16384446074859,
+			"centerY": 35.511496196111466,
+			"w": 237.91428571428565,
+			"h": 77.19442096365145,
+			"font": "buttonfont",
+			"textAlign": "center",
+			"text": "home",
+			"imageName": "button_plank"
+		},
+		{
+			"name": "wrench",
+			"x": 0.8230357142857143,
+			"y": 0.16999999999999996,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 211,
+			"h": 170,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "PteroAttack_Icon_Settings"
+		},
+		{
+			"name": "strong",
+			"x": 0.8230357142857143,
+			"y": 0.602857142857143,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 211,
+			"h": 170,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "",
+			"imageName": "PteroAttack_Icon_Trophy"
+		}
+	]
+}

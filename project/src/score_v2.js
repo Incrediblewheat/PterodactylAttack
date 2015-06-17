@@ -36,13 +36,13 @@ Ptero.score = (function(){
 					"rankedKills": this.getKills(),
 					"rankedCaptures": this.getCaptures(),
 					"rankedBounties": this.getBounties(),
-					"difficulty": 'easy',
+					"difficulty": 'normal',
 					"player_name": 'player'
 				};
         	    break;
         	}
         }
-
+        // sorts scores
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
 		ranks.sort(function (a, b) {
   			if (a.rankedScore < b.rankedScore) {

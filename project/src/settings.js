@@ -37,7 +37,7 @@ Ptero.settings = (function(){
 		"rankedKills": 0,
 		"rankedCaptures": 0,
 		"rankedBounties": 0,
-		"difficulty": 'easy',
+		"difficulty": 'normal',
 		"player_name": 'player',
 	//	"rankNum": 0
 	};

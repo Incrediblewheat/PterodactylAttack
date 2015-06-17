@@ -1,5 +1,5 @@
 
-
+//This test version navigates to gameover and gameover_hs
 Ptero.scene_gameover = (function(){
 
 	var buttonList;
@@ -27,9 +27,10 @@ Ptero.scene_gameover = (function(){
 		btns["accuracy"].text = Math.floor(Ptero.score.getAccuracy()*100).toString();
 
 		btns["quit"].onclick = function() {
-			Ptero.setScene(Ptero.scene_highscore);
-			Ptero.audio.stop('gameover');
-			Ptero.audio.play('theme');
+			isExiting = true;
+			cleanup();
+			
+			Ptero.setScene(Ptero.scene_gameover_hs);
 		};
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game

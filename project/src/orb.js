@@ -70,7 +70,8 @@ Ptero.orb = (function(){
 
 	// radius of the orb on screen and in space
 	function getRadius() {
-		return Ptero.screen.getWindowHeight()/2 * (1/2*0.8);
+		return Ptero.screen.getWindowHeight()/2 * (1/2*0.55);
+		//adjusted from (1/2*.08) to (1/2*.625) -June 2015 JDP
 	}
 	function getSpaceRadius() {
 		return getRadius() / Ptero.frustum.scale;
@@ -177,7 +178,7 @@ Ptero.orb = (function(){
 
 	var shouldDrawCones = false;
 	function drawCone(ctx,target) {
-		// Note: We are only drawing these cones if the we are charging (i.e. touch started from within the circle)
+		// Note: We are only drawing these cones while we are charging (i.e. touch started from within the circle)
 		//  This is indicated by a non-null value in "startOrigin".
 
 		if (!startOrigin || !shouldDrawCones || !target.isHittable()) {
@@ -216,7 +217,8 @@ Ptero.orb = (function(){
 		}
 
 		ctx.beginPath();
-		painter.moveTo(ctx, startOrigin);
+	//	painter.moveTo(ctx, startOrigin); //turned off aim from touch point
+		painter.moveTo(ctx, next_origin); //this aims spotlight from the center of the orb always -JDP
 		painter.lineTo(ctx, lc);
 		painter.lineTo(ctx, rect.tl);
 		painter.lineTo(ctx, rect.tr);
@@ -795,7 +797,8 @@ Ptero.orb = (function(){
 
 		var bullet = new Ptero.Bullet;
 		bullet.speed = speed || getBulletSpeed();
-		bullet.pos.set(startOrigin);
+	//	bullet.pos.set(startOrigin);
+		bullet.pos.set(next_origin); //shoot from center of orb
 		bullet.dir.set(vector);
 		return bullet;
 	};
@@ -919,6 +922,7 @@ Ptero.orb = (function(){
 					else {
 						//shoot(getAimVector(nearPoint));
 						shootWithLead(getAimVector(nearPoint));
+
 					}
 				}
 			}

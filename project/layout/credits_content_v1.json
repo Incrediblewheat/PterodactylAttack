@@ -1075,6 +1075,29 @@
 			"font": "buttonfont",
 			"textAlign": "center",
 			"text": "Intern"
+		},
+		{
+			"x": 0.18901785714285707,
+			"y": 3.5257142857142862,
+			"centerX": 0,
+			"centerY": 0,
+			"w": 298.742857142857,
+			"h": 56,
+			"font": "whitefont",
+			"textAlign": "center",
+			"text": "Ryan Moninghoff",
+			"imageName": null
+		},
+		{
+			"x": 0.27821428571428564,
+			"y": 3.6242857142857146,
+			"centerX": 70.97142857142853,
+			"centerY": 21.59999999999991,
+			"w": 130.05714285714282,
+			"h": 43.657142857142844,
+			"font": "buttonfont",
+			"textAlign": "center",
+			"text": "Intern"
 		}
 	]
 }
