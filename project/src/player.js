@@ -82,5 +82,6 @@ Ptero.Player.prototype = {
 	die: function() {
 		this.lives -= 1;
 		console.log("Lives Remaining: " + this.lives);
+		this.health = this.initHealth;
 	},
 };

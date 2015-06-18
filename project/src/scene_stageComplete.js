@@ -49,9 +49,7 @@ Ptero.scene_stageComplete = (function(){
 		}; 
 
 		btns["quit"].onclick = function() {
-			Ptero.setScene(Ptero.scene_highscore);
-			Ptero.audio.stop('Ptero_Lose_Music');
-			Ptero.audio.play('theme');
+			Ptero.setScene(Ptero.scene_gameover_hs);
 		};
 
 		// enable controls after one second to prevent inadvertent selection if swipe actions spill over from the game

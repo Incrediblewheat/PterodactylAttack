@@ -11,7 +11,12 @@ Ptero.scene_gameover = (function(){
 
 	var isExiting;
 	function init() {
-		Ptero.audio.play('gameover');
+		if (Ptero.overlord.waveNum == Ptero.overlord.maxWave) {
+			Ptero.audio.play('Ptero_Win_Music');
+		}
+		else {
+			Ptero.audio.play('gameover');
+		}
 		Ptero.audio.play('drop_menu');
 		Ptero.overlord.stopScript();
 		isExiting = false;

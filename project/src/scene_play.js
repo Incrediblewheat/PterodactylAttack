@@ -431,11 +431,8 @@ Ptero.scene_play = (function() {
 
 	function update(dt) {
 		if (!isPaused) {
-			if (Ptero.player.health <= 0 & Ptero.player.lives == 0){
+			if (Ptero.player.lives == 0){
 				Ptero.setScene(Ptero.scene_gameover);
-			}
-			else if (Ptero.player.health <= 0){
-				Ptero.setScene(Ptero.scene_continue);
 			}
 			else {
 				time += dt;

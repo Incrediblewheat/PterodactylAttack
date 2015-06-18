@@ -95,7 +95,7 @@ Ptero.score = (function(){
 			failedBounties += delta;
 		},
 		getWaves: function() {
-			waves = Ptero.overlord.waveNum +1;
+			waves = Ptero.overlord.waveNum;
 			return waves;
 		},
 		getKills: function() {

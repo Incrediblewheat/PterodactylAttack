@@ -938,7 +938,7 @@ Ptero.OverlordWaves = function() {
 
 	this.waveNum = 0;
 	this.showWaveNum = false;
-	this.maxWave = 15;
+	this.maxWave = 10;
 
 	this.createWaveScript(0);
 
@@ -1033,9 +1033,9 @@ Ptero.OverlordWaves.prototype = {
 		var groupWaitTime = (function(){
 			// wait time will decrease to a certain floor
 
-			var waveCap = 15;
-			var maxWait = 2.5;
-			var minWait = 1;
+			var waveCap = 10;
+			var maxWait = 2.15;
+			var minWait = 1.2;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
@@ -1047,9 +1047,9 @@ Ptero.OverlordWaves.prototype = {
 		// the time to wait between each ptero in a ptero group
 		var pteroWaitTime = (function(){
 
-			var waveCap = 15;
-			var maxWait = 2.5;
-			var minWait = 0.265;
+			var waveCap = 10;
+			var maxWait = 1.85;
+			var minWait = 0.315;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
@@ -1143,15 +1143,16 @@ Ptero.OverlordWaves.prototype = {
 		var that = this;
 		this.waitingForTheEnd = false;
 		that.createWaveScript(that.waveNum + 1);
-		if (this.waveNum == 5){
+		if (this.waveNum == 3){
 			Ptero.setScene(Ptero.scene_stageComplete);
 		}
-		if (this.waveNum == 10){
+		if (this.waveNum == 6){
 			Ptero.setScene(Ptero.scene_stageComplete);
 		}
 		if (this.waveNum == this.maxWave)
 		{
 			Ptero.setScene(Ptero.scene_gameover);
+			//TODO: at final wave, say "FINAL WAVE"
 		}
 	},
 	update: function(dt) {
