@@ -45,8 +45,6 @@ Ptero.assets = (function(){
 	};
 
 	var imageSources = {
-		"controlcenter" : "img/controlcenter.png",
-		"warn" : "img/warn.png",
 		"health" : "img/health.png",
 		"bounty" : "img/bounty.png",
 		"egg"    : "img/egg.png",
@@ -64,9 +62,6 @@ Ptero.assets = (function(){
 		"redscorefont" : "fonts/redscorefont.png",
 
 		"loading"     : "img/loading.png",
-		"menu_wrench"       : "img/menu/menu_wrench.png",
-		"menu_strong"       : "img/menu/menu_strong.png",
-		"menu_scroll"       : "img/menu/menu_scroll.png",
 
 		"boom1": "img/boom1s.png",
 		"boom3": "img/boom3s.png",
@@ -222,8 +217,6 @@ Ptero.assets = (function(){
 		"highscores_paths" : "paths/highscores.json",
 
 		// button layouts
-		"btns_controlcenter"   : "layout/controlcenter.json",
-		"btns_warn"            : "layout/warn.json",
 		"btns_tutorial"        : "layout/tutorial_v1.json",
 		"btns_wave"            : "layout/wave.json",
 		"btns_options"         : "layout/options_v2.json",
