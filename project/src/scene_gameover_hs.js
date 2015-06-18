@@ -8,6 +8,8 @@ Ptero.scene_gameover_hs = (function(){
 	}
 
 	function init() {
+		Ptero.audio.play('score');
+		
 		buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_gameover_hs"]);
 		var btns = buttonList.namedButtons;
 
@@ -35,11 +37,6 @@ Ptero.scene_gameover_hs = (function(){
 		btns["difficulty5"].text = ranks[4].difficulty;
 		btns["score5"].text = ranks[4].rankedScore.toString();
 
-	/*	btns["kills"].text    = Ptero.settings.get("high_kills").toString();
-		btns["caps"].text     = Ptero.settings.get("high_captures").toString();
-		btns["bounties"].text = Ptero.settings.get("high_bounties").toString();
-    */
-
 		btns["localPhone"].onclick = function() {
 			//do nothing for now
 		};
@@ -54,10 +51,14 @@ Ptero.scene_gameover_hs = (function(){
 		btns["quit"].onclick = function() {
 			isExiting = true;
 			cleanup();
-
-			Ptero.setScene(Ptero.scene_menu);
-			Ptero.audio.stop('gameover');
-			Ptero.audio.play('theme');
+			Ptero.audio.fadeOut('score', 1.5);
+			Ptero.background.exit();
+			Ptero.background.playOutTrack();
+			Ptero.scene_menu.isPteroFlying = true;
+			setTimeout(function(){
+				Ptero.setScene(Ptero.scene_menu);
+				Ptero.audio.play('theme');
+			}, 3500);
 		};
 
 		buttonList.enable();		

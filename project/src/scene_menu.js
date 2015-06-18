@@ -6,8 +6,6 @@ Ptero.scene_menu = (function(){
 	var enemies = [];
 
 	// This controls whether or not the pterodactyls will fly toward you when the menu starts.
-	// (This has been said to scare the user into shooting them if they have already played a game,
-	// so I will only enable this on startup)
 	var isPteroFlying = true;
 	function enablePteroFlying(on) {
 		isPteroFlying = on;
@@ -18,7 +16,6 @@ Ptero.scene_menu = (function(){
 	function cleanup() {
 		Ptero.orb.disableTouch();
 		Ptero.bulletpool.clear();
-//		warnBtn.disable();
 	}
 
 	var fadeOutTime;
@@ -111,15 +108,6 @@ Ptero.scene_menu = (function(){
 		// reset the score
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
-
-/*		var buttonList = new Ptero.ButtonList(Ptero.assets.json["btns_warn"]);
-		var btns = buttonList.namedButtons;
-		warnBtn = btns["warn"];
-		warnBtn.onclick = function() {
-			Ptero.scene_controlcenter.animateIn();
-			switchScene(Ptero.scene_controlcenter);
-		};
-		warnBtn.enable(); */
 
 		fadeOutTime = null;
 

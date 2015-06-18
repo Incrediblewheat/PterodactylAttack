@@ -28,12 +28,12 @@
 			"imageName": "logo"
 		},
 		{
-			"x": 0.5024107142857143,
-			"y": 0.8342857142857143,
-			"centerX": 108,
-			"centerY": 24.68571428571431,
+			"x": 0.5,
+			"y": 0.8703968253968256,
+			"centerX": 102,
+			"centerY": 26,
 			"w": 204,
-			"h": 62,
+			"h": 52,
 			"font": "whitefont",
 			"textAlign": "center",
 			"text": "",

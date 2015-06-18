@@ -1143,6 +1143,10 @@ Ptero.OverlordWaves.prototype = {
 		var that = this;
 		this.waitingForTheEnd = false;
 		that.createWaveScript(that.waveNum + 1);
+
+		Ptero.bountySize = Math.min(5, this.waveNum+2);
+		Ptero.refreshBounty();
+		
 		if (this.waveNum == 3){
 			Ptero.setScene(Ptero.scene_stageComplete);
 		}

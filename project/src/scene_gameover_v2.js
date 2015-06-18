@@ -43,6 +43,7 @@ Ptero.scene_gameover = (function(){
 			btns["quit"].enable();
 		}, 1000);
 		
+		//submit stats to highscore
 		Ptero.score.commitStats(Ptero.score.getTotal());
 	/*	if (!isNewHigh.score) {
 			btns["highScore"].text = "continue?";

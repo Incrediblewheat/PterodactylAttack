@@ -49,6 +49,8 @@ Ptero.scene_stageComplete = (function(){
 		}; 
 
 		btns["quit"].onclick = function() {
+			
+			Ptero.score.commitStats(Ptero.score.getTotal());
 			Ptero.setScene(Ptero.scene_gameover_hs);
 		};
 

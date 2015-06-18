@@ -9,7 +9,7 @@ Ptero.assets = (function(){
 
 	var sfxSources = {
 		"shoot"          : "audio/shoot.ogg",
-		"explode"        : "audio/explode.ogg",
+		"explode"        : "audio/explode_02.ogg",
 		"hurt1"          : "audio/hurt1.ogg",
 		"hurt2"          : "audio/hurt2.ogg",
 		"hurt3"          : "audio/hurt3.ogg",
@@ -40,8 +40,7 @@ Ptero.assets = (function(){
 		"volcano_loop"   : "audio/volcano-loop",
 		"volcano_outro"  : "audio/volcano-outro",
 		"Ptero_Win_Music": "audio/Ptero_Win_Music_02",
-		"gameover"       : "audio/Ptero_Lose_Music_02",
-		"Ptero_Continue" : "audio/Ptero_Continue",
+		"gameover"       : "audio/Ptero_Lose_Music_03",
 	};
 
 	var imageSources = {
