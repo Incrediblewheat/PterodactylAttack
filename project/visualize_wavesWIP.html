@@ -1,7 +1,7 @@
 
 <html>
 <body>
-<canvas id="c" style="border:1px solid #000" width="852" height="340"></canvas>
+<canvas id="c" style="border:1px solid #000" width="1024" height="340"></canvas>
 <script>
 var colors = {
         yellow: {light:"#fce94f", medium:"#edd400", dark:"#c4a000"},
@@ -42,9 +42,9 @@ window.onload = function() {
 		var groupWaitTime = (function(){
 			// wait time will decrease to a certain floor
 
-			var waveCap = 12;
-			var maxWait = 3;
-			var minWait = 1;
+			var waveCap = 10;
+			var maxWait = 2.15;
+			var minWait = 1.2;
 			var waitRange = maxWait - minWait;
 
 			var k = Math.min(waveNum,waveCap) / waveCap;
@@ -56,12 +56,17 @@ window.onload = function() {
 		// the time to wait between each ptero in a ptero group
 		var pteroWaitTime = (function(){
 
-			var waveCap = 12;
-			var maxWait = 1.5;
-			var minWait = 0.3;
+			var waveCap = 10;
+			var maxWait = 1.85;
+			var minWait = 0.315;
 			var waitRange = maxWait - minWait;
 
+			//introduce a little more panic on final wave of first stage (wave 3) by bumping up timing of k.
+			if (waveNum == 2) {
+			var k = Math.min(4,waveCap) / waveCap;
+			} else {
 			var k = Math.min(waveNum,waveCap) / waveCap;
+			}
 
 			return maxWait - waitRange * k;
 		})();
@@ -78,8 +83,14 @@ window.onload = function() {
 		})();
 
 		// the number of ptero groups in this wave
+		// v1.32 drops the group number on minor waves to play up final waves
 		var numGroups = (function(){
-			return 5;
+			// KLUDGE for v1.32, please clean me up
+			if (waveNum == 2 || waveNum == 5 || waveNum == 8 || waveNum == 9) {
+				return 5;
+			} else {
+				return 4;
+			}
 		})();
 
 		function drawDot(t) {

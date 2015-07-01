@@ -4,8 +4,8 @@ Ptero.Player = function() {
 	this.initHealth = 4;
 
 	this.maxLives = 5;
-	this.lives = 1;
-	console.log("LIVES", this.lives);
+	this.lives = 3;
+//	console.log("LIVES", this.lives);
 
 	this.initBounty = 0;
 	this.maxBounty = 5;

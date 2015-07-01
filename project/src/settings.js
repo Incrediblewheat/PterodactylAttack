@@ -38,7 +38,7 @@ Ptero.settings = (function(){
 		"rankedCaptures": 0,
 		"rankedBounties": 0,
 		"difficulty": 'normal',
-		"player_name": 'player',
+		"player_name": '1-3-2014'
 	//	"rankNum": 0
 	};
 

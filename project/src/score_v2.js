@@ -23,6 +23,13 @@ Ptero.score = (function(){
 	var bounties;
 	var failedBounties;
 
+	var dateObj = new Date();
+	var month = dateObj.getUTCMonth() + 1; //months from 1-12
+	var day = dateObj.getUTCDate();
+	var year = dateObj.getUTCFullYear();
+
+	newdate = year + "/" + month + "/" + day;
+
 	function commitStats(lastScore) {
 		//checks score against top 5, commmits if a new high
 		//then sorts and truncates to keep a max of 5 ranks.
@@ -37,7 +44,7 @@ Ptero.score = (function(){
 					"rankedCaptures": this.getCaptures(),
 					"rankedBounties": this.getBounties(),
 					"difficulty": 'normal',
-					"player_name": 'player'
+					"player_name": this.getNewDate()
 				};
         	    break;
         	}
@@ -143,6 +150,15 @@ Ptero.score = (function(){
 		},
 		getTotal: function() {
 			return total;
+		},
+		getNewDate: function() {
+			var dateObj = new Date();
+			var month = dateObj.getUTCMonth() + 1; 
+			var day = dateObj.getUTCDate();
+			var year = dateObj.getUTCFullYear();
+
+			newdate = month + "-" + day + "-" + year;
+			return String(newdate);
 		},
 		commitStats:commitStats,
 	};

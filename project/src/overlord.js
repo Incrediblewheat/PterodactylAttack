@@ -1052,7 +1052,12 @@ Ptero.OverlordWaves.prototype = {
 			var minWait = 0.315;
 			var waitRange = maxWait - minWait;
 
+			//introduce a little more panic on final wave of first stage (wave 3) by bumping up timing of k.
+			if (waveNum == 2) {
+			var k = Math.min(4,waveCap) / waveCap;
+			} else {
 			var k = Math.min(waveNum,waveCap) / waveCap;
+			}
 
 			return maxWait - waitRange * k;
 		})();
@@ -1070,7 +1075,12 @@ Ptero.OverlordWaves.prototype = {
 
 		// the number of ptero groups in this wave
 		var numGroups = (function(){
-			return 5;
+			// KLUDGE for v1.32, please clean me up
+			if (waveNum == 2 || waveNum == 5 || waveNum == 8 || waveNum == 9) {
+				return 5;
+			} else {
+				return 4;
+			}
 		})();
 
 		console.log('WAVE',waveNum+1);
@@ -1146,7 +1156,7 @@ Ptero.OverlordWaves.prototype = {
 
 		Ptero.bountySize = Math.min(5, this.waveNum+2);
 		Ptero.refreshBounty();
-		
+
 		if (this.waveNum == 3){
 			Ptero.setScene(Ptero.scene_stageComplete);
 		}

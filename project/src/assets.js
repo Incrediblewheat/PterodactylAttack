@@ -95,6 +95,9 @@ Ptero.assets = (function(){
 		"PteroAttack_Icon_Trophy" : "img/menu/PteroAttack_Icon_Trophy.png",
 		"lock" : "img/lock.png",
 		"loading" : "img/loading.png"
+
+		//v1.32 assets
+		//"bountyicon" : "img/bountyicon.png"
 	};
 
 	var vectorSources = {

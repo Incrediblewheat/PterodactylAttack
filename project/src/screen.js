@@ -99,7 +99,7 @@ Ptero.screen = (function(){
 	// Parallax effect from screen tilting
 	var parallaxMultiplier;
 	function initParallaxEvent() {
-		var maxAngle = 30;
+		var maxAngle = 90; //originally 30, reduced to 20 v1.32
 		if (navigator.isCocoonJS) {
 			window.addEventListener('deviceorientation', function(orientData) {
 				// the beta angle ranges between -90 and 90 degrees
