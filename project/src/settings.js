@@ -99,7 +99,7 @@ Ptero.settings = (function(){
 			catch (e) {
 			}
 			initValues();
-	//		console.log(values);
+	    //	console.log(values);
 		},
 		save: function() {
 			localStorage[key] = JSON.stringify(values);

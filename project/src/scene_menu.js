@@ -105,9 +105,12 @@ Ptero.scene_menu = (function(){
 	function init() {
 		Ptero.player = new Ptero.Player();
 		Ptero.score.reset();
-		// reset the score
+		
 		Ptero.setBackground('menu');
 		Ptero.background.goToIdle();
+
+		//Prep a new interstitial ad
+		Cocoon.Ad.refreshInterstitial();
 
 		fadeOutTime = null;
 

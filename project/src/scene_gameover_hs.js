@@ -54,11 +54,14 @@ Ptero.scene_gameover_hs = (function(){
 			Ptero.audio.fadeOut('score', 1.5);
 			Ptero.background.exit();
 			Ptero.background.playOutTrack();
-			Ptero.scene_menu.isPteroFlying = true;
 			setTimeout(function(){
-				Ptero.setScene(Ptero.scene_menu);
-				Ptero.audio.play('theme');
+				Cocoon.Ad.showInterstitial();
+				setTimeout(function(){
+					Ptero.setScene(Ptero.scene_menu);
+					Ptero.audio.play('theme');
+				},500);
 			}, 3500);
+
 		};
 
 		buttonList.enable();		

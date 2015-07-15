@@ -71,6 +71,9 @@ window.onload = function() {
 			console.log("animating title scene out");
 			Ptero.scene_title.animateOut();
 
+			console.log("wrangling ads");
+			Ptero.adwrangler.init();
+
 			// open socket for remote control
 			/*
 			Ptero.socket = io.connect('/');
@@ -91,6 +94,8 @@ window.onload = function() {
 				}
 			});
 			*/
+			
+
 		},
 	});
 };
